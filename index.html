@@ -12,9 +12,9 @@
 <body>
 
 <header>
-  <h1>Bikesh Sedhain</h1>
+  <h3>Bikesh</h3>
   <nav>
-    <a href="resume.html">Resume</a>
+    <a href="resume.html" class="resume-link">Resume</a>
   </nav>
 </header>
 
@@ -43,7 +43,6 @@
     <h2>About Me</h2>
     <p>I am a web developer and AI enthusiast, passionate about creating interactive and intelligent applications. Experienced in HTML, CSS, JS, Django, Python, and Machine Learning.</p>
   </div>
-  <div class="about-right"></div>
 </section>
 
 <!-- SKILLS (as icons) -->
@@ -83,12 +82,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="contact">
-  <h2>Contact</h2>
-  <p>Email: bikeshsedhain789@gmail.com</p>
-</section>
-
 <footer>
   © 2026 Bikesh Sedhain
 </footer>
@@ -109,12 +102,16 @@ typeEffect();
 
 // ----- Scroll Reveal for sections -----
 const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
+function revealSections() {
   sections.forEach(section => {
     const top = section.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){ section.classList.add("show"); }
+    if (top < window.innerHeight - 100) {
+      section.classList.add("show");
+    }
   });
-});
+}
+document.addEventListener("DOMContentLoaded", revealSections);
+window.addEventListener("scroll", revealSections);
 
 // ----- Back to Top Button -----
 const backBtn = document.createElement('button');
