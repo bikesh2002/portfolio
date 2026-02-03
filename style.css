@@ -1,0 +1,159 @@
+:root {
+  --bg: #ffffff;
+  --text: #1f2933;
+  --accent: #3b82f6;
+  --muted: #64748b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* HERO / PROFILE */
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  animation: float 4s ease-in-out infinite;
+  margin: auto;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+.hero p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* SOCIAL ICONS */
+.socials {
+  margin-top: 1rem;
+}
+.socials a {
+  margin: 0 0.5rem;
+  font-size: 1.6rem;
+  color: var(--text);
+}
+.socials a:hover {
+  color: var(--accent);
+}
+
+/* MAIN SECTIONS */
+main {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+main section {
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+main section.show, .hero.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+/* BUTTONS */
+.resume-btn, .back-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.resume-btn:hover, .back-btn:hover {
+  opacity: 0.9;
+}
+
+/* RESUME PAGE IFRAME */
+iframe {
+  width: 90%;
+  height: 90vh;
+  border: none;
+  margin-top: 1.5rem;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  color: var(--muted);
+}
+
+/* BACK TO TOP BUTTON */
+#backBtn:hover {
+  opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+  iframe {
+    height: 70vh;
+    width: 95%;
+  }
+}
